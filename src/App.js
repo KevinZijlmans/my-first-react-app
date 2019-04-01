@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Title from './components/Title';
+import LightSwitch from './components/LightSwitch'
+import UserBoard from './components/UserBoard'
+import User from './components/User'
 
 class App extends Component {
+  state = ['Kevin','Bob','Fred']
   render() {
     return (
       <div className="App">
@@ -21,9 +25,12 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        
+
         <main>
-          <Title />
+          <Title content='This is my Title' />
+          <LightSwitch />
+          <UserBoard names={this.state} />
+          <User names={this.state} />
         </main>
       </div>
     );
